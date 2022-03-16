@@ -1,0 +1,19 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+data:
+  default.conf: "server{
+       listen 80;
+       server_name _ ;
+       location /{
+               proxy_pass 'http://backendservice:8000';
+       }}"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-03-14T18:15:39Z"
+  name: nginx-cfg
+  namespace: default
+  resourceVersion: "64004"
+  uid: ddf01ff8-d28c-4ec6-aa92-c5cf88ed83cf
